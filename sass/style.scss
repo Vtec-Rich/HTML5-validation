@@ -1,0 +1,281 @@
+//variables
+$main-bg: #b5b5b5;
+$font-color:#222;
+$breakpoint: 768px;
+$container-bg: #FFF;
+$container-border:#c5c5c5;
+$box-shadow-color:#969696;
+$invalid-color:#9BC6DD;
+$valid-color:#cccccc;
+$input-submit-bg:#f7c929;
+$input-text-color:#074864;
+$input-bg:#f1f1f1;
+$radio-bg:#cbd1d8;
+$radio-color:#FFF;
+$radio-hover-color:#9faab7;
+$radio-checked-color:#9BC6DD;
+$border-radius:50%;
+
+@media only screen  {
+
+	/* Basic CSS reset */
+	html, body, div, span, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	abbr, address, cite, code,
+	del, dfn, em, img, ins, kbd, q, samp,
+	small, strong, sub, sup, var,
+	b, i,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, figcaption, figure, 
+	footer, header, hgroup, menu, nav, section, summary,
+	time, mark, audio, video {
+	    margin:0;
+	    padding:0;
+	    border:0;
+	    outline:0;
+	    font-size:100%;
+	    vertical-align:baseline;
+	    background:transparent;
+	}
+
+	body {
+	    line-height:1;
+	}
+
+	article,aside,details,figcaption,figure,
+	footer,header,hgroup,menu,nav,section { 
+	    display:block;
+	}
+
+	nav ul {
+	    list-style:none;
+	}
+
+	blockquote, q {
+	    quotes:none;
+	}
+
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+	    content:'';
+	    content:none;
+	}
+
+	a {
+	    margin:0;
+	    padding:0;
+	    font-size:100%;
+	    vertical-align:baseline;
+	    background:transparent;
+	}
+
+	input, select {
+	    vertical-align:middle;
+	}
+	/* end reset */
+
+	html {
+	  	box-sizing: border-box;
+	}
+
+	*, *:before, *:after {
+	  	box-sizing: inherit;
+	}
+
+	body {
+	  	font-family: 'Lato', sans-serif;
+	  	color: $font-color;
+	  	background-color: $main-bg;
+	}
+
+	@keyframes fadein {
+	    from {
+	        opacity:0;
+	    }
+	    to {
+	        opacity:1;
+	    }
+	}
+	@-moz-keyframes fadein { /* Firefox */
+	    from {
+	        opacity:0;
+	    }
+	    to {
+	        opacity:1;
+	    }
+	}
+	@-webkit-keyframes fadein { /* Safari and Chrome */
+	    from {
+	        opacity:0;
+	    }
+	    to {
+	        opacity:1;
+	    }
+	}
+	@-o-keyframes fadein { /* Opera */
+	    from {
+	        opacity:0;
+	    }
+	    to {
+	        opacity: 1;
+	    }
+	}
+
+	.container {
+		width:95%;
+		margin:0 auto;
+		background:$container-bg;
+		border:1px solid $container-border;
+		padding:10px;
+		box-shadow: 0px 0px 10px 0px $box-shadow-color;
+		margin-top:10px;
+		margin-bottom:25px;
+		animation: fadein 2s;
+	    -moz-animation: fadein 2s; /* Firefox */
+	    -webkit-animation: fadein 2s; /* Safari and Chrome */
+	    -o-animation: fadein 2s; /* Opera */
+
+		h1 {
+			text-align:center;
+			font-size:1.2em;
+			margin: 20px 0;
+		}
+
+		p {
+			text-align:center;
+			font-size:0.8em;
+			line-height: 20px;
+		}
+
+		input, select, textarea {
+			font-family: 'Lato', sans-serif;
+			display: inline-block;
+		  	width: 100%;
+		    margin: 10px 0;
+		    padding: 10px;
+		    outline: none;
+		    background: $input-bg;
+		}
+
+		textarea {
+			min-height:auto;
+		}
+
+		label {display:none;}
+
+		.radioGroup label {
+			display:block;
+			float: left;
+		    width: 140px;
+		    line-height: 45px;
+		}
+
+		legend {display:none;}
+
+		input:invalid, textarea:invalid, select:invalid {
+		  border: 1px dashed $invalid-color;
+		}
+
+		input:valid, textarea:valid, select:valid {
+		  border: 1px solid $valid-color;
+		}
+
+		input[type=submit] {
+			width: 200px;
+		    margin: auto;
+		    display: block;
+		    color: #074864;
+		    background-color: $input-submit-bg;
+		    border-radius: .27777em;
+		    font-weight: 600;
+		}
+
+		input[type=submit]:hover {
+			cursor:pointer;
+		}
+
+		.option-input {
+		    -webkit-appearance: none;
+		    -moz-appearance: none;
+		    -ms-appearance: none;
+		    -o-appearance: none;
+		    appearance: none;
+		    top: -8px;
+		    right: 0;
+		    bottom: 0;
+		    left: 0;
+		    height: 40px;
+		    width: 40px;
+		    transition: all 0.15s ease-out 0s;
+		    background: $radio-bg;
+		    border: none;
+		    color: $radio-color;
+			cursor: pointer;
+			display: inline-block;
+			margin-right: 0.5rem;
+		    outline: none;
+		    position: relative;
+		    z-index: 1000;
+		}
+
+		.option-input:hover {
+		    background: $radio-hover-color;
+		}
+
+		.option-input:checked {
+		    background: $radio-checked-color;
+		}
+
+		.option-input:checked::before {
+			height: 40px;
+			width: 40px;
+			position: absolute;
+			content: '\2713 ';
+			display: inline-block;
+			font-size: 26px;
+			text-align: center;
+			line-height: 40px;
+		    top: 1px;
+		    left: -1px;
+		}
+
+		.option-input.radio {
+		    border-radius: $border-radius;
+		}
+
+		.option-input.radio::after {
+		    border-radius: $border-radius;
+		}
+
+		fieldset {
+			border:none; 
+			margin:0; 
+			padding :0;
+		}
+	}
+
+}
+
+@media only screen and (min-width: $breakpoint)  {
+	.container {
+		width:80%;
+		max-width:800px;
+		margin-top:100px;
+
+		h1 {
+			font-size: 2.2em;
+		}
+
+		p {
+			font-size:1em;
+			margin: 10px 0;
+		}
+
+		textarea {
+			min-height:100px;
+		}
+	}
+
+}

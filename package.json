@@ -1,0 +1,19 @@
+{
+  "name": "HTML5ValApp",
+  "version": "1.0.0",
+  "description": "HTML5 Validation App",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "R. Warmingham",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "dependencies": {
+    "bower": "^1.7.9"
+  }
+}
